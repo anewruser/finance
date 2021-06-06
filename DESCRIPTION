@@ -1,0 +1,31 @@
+Package: pittlHafnerLuo
+Title: A financial index download library
+Version: 0.0.1.0
+Authors@R: 
+    person(given = "Benedikt",
+           family = "Pittl",
+           role = c("aut", "cre"),
+           email = "first.last@example.com",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+    person(given = "Florian",
+           family = "Hafner",
+           role = c("aut", "cre"),
+           email = "first.last@example.com",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+    person(given = "Odo",
+           family = "Luo",
+           role = c("aut", "cre"),
+           email = "first.last@example.com",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: Gets data from yahoo and other providers. See description for more information.
+Imports: dplyr,
+    rvest,
+    jsonlite,
+    stringr,
+    tibble
+License: GPL-2
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+

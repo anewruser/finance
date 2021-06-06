@@ -1,0 +1,88 @@
+---
+title: "UsageExample"
+output: html_document
+---
+
+#Project Usage Example
+
+## Download Repo
+
+```{r}
+cred <- git2r::cred_user_pass(rstudioapi::askForPassword("username"), rstudioapi::askForPassword("Password"))
+devtools::install_git("https://git-inf.technikum-wien.at/finance/finance2021/pkgs/pittl_hafner_luo.git",credentials = cred)
+
+```
+
+```{r}
+
+devtools::install_git("https://git-inf.technikum-wien.at/finance/finance2021/pkgs/catsar.git", credentials = cred)
+```
+
+
+```{r}
+library(pittlHafnerLuo)
+```
+
+
+## Help
+```{r}
+?get_index
+```
+
+
+# Usage Examples
+
+## FCS
+
+Unfortunatly, the ATX is not supported by that API!
+
+```{r}
+get_index("Dow Jones","fcs","united-states")
+```
+
+
+```{r}
+get_index("DAX","fcs","germany")
+```
+
+
+```{r}
+get_index("JASDAQ","fcs","japan")
+```
+
+
+
+
+## Yahoo Finance
+
+```{r}
+get_index("ATX")
+```
+
+
+```{r}
+get_index("GDAXI") #identifiers are at least partly available
+
+```
+
+For US shares, we also ahve identifiers and sedol!
+
+```{r}
+get_index("IXIC")
+
+```
+
+```{r}
+
+get_index("OMX")
+
+```
+
+
+Also for that mambers, we get identifiers!
+
+```{r}
+
+get_index("IXIC") #nasdaq
+```
+
