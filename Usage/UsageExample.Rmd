@@ -11,7 +11,7 @@ output:
 
 ```{r}
 rm(list = ls())
-cred <- git2r::cred_user_pass(rstudioapi::askForPassword("username"), rstudioapi::askForPassword("Password"))
+#cred <- git2r::cred_user_pass(rstudioapi::askForPassword("username"), rstudioapi::askForPassword("Password"))
 #devtools::install_git("https://git-inf.technikum-wien.at/finance/finance2021/pkgs/pittl_hafner_luo.git",credentials = cred)
 
 #alternative: 
@@ -47,11 +47,13 @@ pittlHafnerLuo::get_index("Dow Jones","fcs","united-states")
 
 
 ```{r}
+Sys.sleep(60)
 pittlHafnerLuo::get_index("DAX","fcs","germany")
 ```
 
 
 ```{r}
+Sys.sleep(60)
 pittlHafnerLuo::get_index("JASDAQ","fcs","japan")
 ```
 
@@ -61,7 +63,7 @@ pittlHafnerLuo::get_index("JASDAQ","fcs","japan")
 ## Yahoo Finance
 
 ```{r}
-pittlHafnerLuo::pittlHafnerLuo::get_index("ATX")
+pittlHafnerLuo::get_index("ATX")
 ```
 
 
