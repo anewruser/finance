@@ -1,6 +1,8 @@
 ---
 title: "UsageExample"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 #Project Usage Example
@@ -8,14 +10,17 @@ output: html_document
 ## Download Repo
 
 ```{r}
+rm(list = ls())
 cred <- git2r::cred_user_pass(rstudioapi::askForPassword("username"), rstudioapi::askForPassword("Password"))
-devtools::install_git("https://git-inf.technikum-wien.at/finance/finance2021/pkgs/pittl_hafner_luo.git",credentials = cred)
+#devtools::install_git("https://git-inf.technikum-wien.at/finance/finance2021/pkgs/pittl_hafner_luo.git",credentials = cred)
+
+#alternative: 
+devtools::install_git("https://github.com/anewruser/finance.git")
 
 ```
 
 ```{r}
-
-devtools::install_git("https://git-inf.technikum-wien.at/finance/finance2021/pkgs/catsar.git", credentials = cred)
+#devtools::install_git("https://git-inf.technikum-wien.at/finance/finance2021/pkgs/catsar.git", credentials = cred)
 ```
 
 
@@ -26,7 +31,7 @@ library(pittlHafnerLuo)
 
 ## Help
 ```{r}
-?get_index
+?pittlHafnerLuo::get_index
 ```
 
 
@@ -37,17 +42,17 @@ library(pittlHafnerLuo)
 Unfortunatly, the ATX is not supported by that API!
 
 ```{r}
-get_index("Dow Jones","fcs","united-states")
+pittlHafnerLuo::get_index("Dow Jones","fcs","united-states")
 ```
 
 
 ```{r}
-get_index("DAX","fcs","germany")
+pittlHafnerLuo::get_index("DAX","fcs","germany")
 ```
 
 
 ```{r}
-get_index("JASDAQ","fcs","japan")
+pittlHafnerLuo::get_index("JASDAQ","fcs","japan")
 ```
 
 
@@ -56,25 +61,25 @@ get_index("JASDAQ","fcs","japan")
 ## Yahoo Finance
 
 ```{r}
-get_index("ATX")
+pittlHafnerLuo::pittlHafnerLuo::get_index("ATX")
 ```
 
 
 ```{r}
-get_index("GDAXI") #identifiers are at least partly available
+pittlHafnerLuo::get_index("GDAXI") #identifiers are at least partly available
 
 ```
 
 For US shares, we also ahve identifiers and sedol!
 
 ```{r}
-get_index("IXIC")
+pittlHafnerLuo::get_index("IXIC")
 
 ```
 
 ```{r}
 
-get_index("OMX")
+pittlHafnerLuo::get_index("OMX")
 
 ```
 
@@ -83,6 +88,6 @@ Also for that mambers, we get identifiers!
 
 ```{r}
 
-get_index("IXIC") #nasdaq
+pittlHafnerLuo::get_index("IXIC") #nasdaq
 ```
 
