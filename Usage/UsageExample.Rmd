@@ -25,7 +25,9 @@ devtools::install_git("https://github.com/anewruser/finance.git")
 
 
 ```{r}
+library(tidyquant)
 library(pittlHafnerLuo)
+
 ```
 
 
@@ -35,6 +37,16 @@ library(pittlHafnerLuo)
 ```
 
 
+# Important Notes:
+We implemented two sources:
+
+* Yahoo: here we implemented typical web crawling. In addition we used
+`stockmarketmba.com` to get the identifiers (such as `sedol`) if existing. 
+Hence, this source is very slow
+
+* FCSAPI: here we used a typical `API`. Please, do not overuse it as there is
+a monthly as well as hourly limit!!
+
 # Usage Examples
 
 ## FCS
@@ -42,7 +54,10 @@ library(pittlHafnerLuo)
 Unfortunatly, the ATX is not supported by that API!
 
 ```{r}
-pittlHafnerLuo::get_index("Dow Jones","fcs","united-states")
+dow<-pittlHafnerLuo::get_index("Dow Jones","fcs","united-states")
+
+#attention: symbols of the fcs api might not 100% match with tidyquant symbols!
+dow %>% tidyquant::tq_get(get="stock.prices",from="2021-06-01")
 ```
 
 
@@ -63,7 +78,8 @@ pittlHafnerLuo::get_index("JASDAQ","fcs","japan")
 ## Yahoo Finance
 
 ```{r}
-pittlHafnerLuo::get_index("ATX")
+atx<-pittlHafnerLuo::get_index("ATX")
+atx %>% tidyquant::tq_get(get="stock.prices",from="2021-06-01")
 ```
 
 
