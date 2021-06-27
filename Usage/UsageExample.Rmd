@@ -5,7 +5,7 @@ output:
   html_document: default
 ---
 
-#Project Usage Example
+# Project Usage Example
 
 ## Download Repo
 
@@ -84,7 +84,7 @@ atx %>% tidyquant::tq_get(get="stock.prices",from="2021-06-01")
 
 
 ```{r}
-pittlHafnerLuo::get_index("GDAXI") #identifiers are at least partly available
+pittlHafnerLuo::get_index("GDAXI") #no identifier, sedol are available
 
 ```
 
