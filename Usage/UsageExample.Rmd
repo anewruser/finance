@@ -77,35 +77,42 @@ pittlHafnerLuo::get_index("JASDAQ","fcs","japan")
 
 ## Yahoo Finance
 
+Be carefull: too many connections will lead to a 503 exception: then simply
+re-run the failed chunck!
+
 ```{r}
-atx<-pittlHafnerLuo::get_index("ATX")
+Sys.sleep(5)
+atx<-pittlHafnerLuo::get_index("ATX") #no identifier, sedol are available
 atx %>% tidyquant::tq_get(get="stock.prices",from="2021-06-01")
 ```
 
 
 ```{r}
+
+Sys.sleep(10)
 pittlHafnerLuo::get_index("GDAXI") #no identifier, sedol are available
 
 ```
 
-For US shares, we also ahve identifiers and sedol!
+For US shares, we also have identifiers and sedol!
 
 ```{r}
+Sys.sleep(15)
 pittlHafnerLuo::get_index("IXIC")
 
 ```
 
 ```{r}
-
+Sys.sleep(5)
 pittlHafnerLuo::get_index("OMX")
 
 ```
 
 
-Also for that mambers, we get identifiers!
+Also for that members, we get identifiers!
 
 ```{r}
-
+Sys.sleep(15)
 pittlHafnerLuo::get_index("IXIC") #nasdaq
 ```
 
